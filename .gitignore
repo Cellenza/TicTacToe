@@ -1,3 +1,4 @@
 node_modules/
 .idea/workspace.xml
 TicTacToe.iws
+/TicTacToe.Web/obj/Debug
