@@ -18,6 +18,7 @@ What is the location of your source and test files ?
 You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".
 Enter empty string to move to the next question.
 > js/*.js
+> tests/**/*.js
 WARN [init]: There is no file matching this pattern.
 
 >
