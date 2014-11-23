@@ -1,0 +1,96 @@
+<html>
+<head>
+
+<style type="text/css">
+
+body {
+	font-family: wf_SegoeUILight, wf_SegoeUI, 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
+}
+
+#morpion, #currentplayer, #winner {
+	font-size: 0;
+	width: 306px;
+	background: black;
+	padding: 1px;
+}
+
+#morpion .playcase, #currentplayer div, #winner div {
+	padding: 0;
+	margin: 1px;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	background: white;
+	vertical-align: top;
+}
+
+#morpion .playcase.x, #currentplayer div.x, #winner .x {
+	background: url('x.png');
+}
+
+#morpion .playcase.o, #currentplayer div.o, #winner .o {
+	background: url('o.png');
+}
+
+#currentplayer, #winner{
+	width: 102px;
+	margin-top: 50px;
+	font-size: 20px;
+	color: white;
+	display: inline-block;
+	text-align: center;	
+}
+
+#theend {
+	display: none;
+}
+
+.gameended #theend {
+	display: block;
+	position: fixed;
+	top: 100px;
+	left: 0;
+	width: 320px;
+	height: 120px;
+	background: url('theend.png');
+	opacity: .8
+}
+
+</style>
+
+<script type="text/javascript" src="js/knockout.js"></script>
+<script type="text/javascript" src="js/vuemodele.js"></script>
+
+
+</head>
+<body data-bind="css : {gameended: gameEnded }">
+
+
+
+<div id="morpion" data-bind="foreach: playcases">
+
+	<div class="playcase" data-bind="click: $root.play,css : {x: player() === 'x', o: player() === 'o'}"></div>
+
+</div>
+
+<div id="currentplayer">
+	PLAYER
+	<div data-bind="css : {x: currentPlayer() === 'x', o: currentPlayer() === 'o' }"></div>
+</div>
+
+<div id="winner">
+	WINNER
+	<div data-bind="css : {x: winner() === 'x', o: winner() === 'o' }"></div>
+</div>
+
+<div id="theend">
+</div>
+
+<script type="text/javascript">
+
+	ko.applyBindings(new TicTacToe());
+
+</script>
+
+</body>
+</html>
