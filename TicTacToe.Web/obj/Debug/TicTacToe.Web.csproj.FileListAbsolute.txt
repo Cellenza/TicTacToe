@@ -1,6 +1,0 @@
-C:\Github\TicTacToe\TicTacToe.Web\bin\TicTacToe.Web.dll.config
-C:\Github\TicTacToe\TicTacToe.Web\bin\TicTacToe.Web.dll
-C:\Github\TicTacToe\TicTacToe.Web\bin\TicTacToe.Web.pdb
-C:\Github\TicTacToe\TicTacToe.Web\obj\Debug\TicTacToe.Web.csprojResolveAssemblyReference.cache
-C:\Github\TicTacToe\TicTacToe.Web\obj\Debug\TicTacToe.Web.dll
-C:\Github\TicTacToe\TicTacToe.Web\obj\Debug\TicTacToe.Web.pdb
