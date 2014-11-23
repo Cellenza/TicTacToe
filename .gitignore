@@ -2,3 +2,5 @@
 TicTacToe.iws
 node_modules/
 karma_html/
+*/bin/
+*/obj/
