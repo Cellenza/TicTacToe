@@ -28,21 +28,27 @@
 				&& public_.playcases[0].player() === public_.playcases[8].player())
 					return true;
 			
-
 			if(Math.floor(position/3) + (position%3) === 2
 				&& public_.playcases[2].player() === public_.playcases[4].player()
 				&& public_.playcases[2].player() === public_.playcases[6].player()) 
 					return true;
 			
-
 			return false;
 		};
 
-		public_.playcases = [];
-		for(var i = 0; i < 9; ++i) {
-			public_.playcases.push(new PlayCase(i));
+		var thereIsNoMoreAvailableCase = function () {
+		    for (var i = 0; i < 9; ++i) {
+		        if(public_.playcases[i].player() === null) return false;
+		    }
+		    return true;
 		}
 
+		public_.playcases = [];
+
+		for (var i = 0; i < 9; ++i) {
+			public_.playcases.push(new PlayCase(i));
+		}
+		
 		public_.currentPlayer = ko.observable('x');
 		
 		public_.winner = ko.observable(null);
@@ -64,8 +70,10 @@
 		};
 		
 		public_.gameEnded =ko.computed(function() {
-			return public_.winner() !== null;
+			return public_.winner() !== null || thereIsNoMoreAvailableCase() ;
 		});
+
+        
 	};
 
 })();

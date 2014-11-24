@@ -78,5 +78,39 @@ describe("Tic Tac Toe Game", function() {
 	  	expect(_.gameEnded()).toBe(true);
 	  	expect(_.winner()).toBe('x');
   	});
+
+  it('should end when all the cases are  full',
+    function () {
+        var _ = new TicTacToe();
+        _.play(_.playcases[0]); //player x top left
+        _.play(_.playcases[1]); //player o top
+        _.play(_.playcases[2]); //player x top right
+        _.play(_.playcases[4]); //player o middle
+        _.play(_.playcases[7]); //player x bottom
+        _.play(_.playcases[6]); //player o bottom left
+        _.play(_.playcases[3]); //player x left
+        _.play(_.playcases[5]); //player o right
+        _.play(_.playcases[8]); //player x right
+        //x made a diagonal : top left, middle, bottom right
+
+        expect(_.gameEnded()).toBe(true);
+    });
+
+  it('should end with no winner when all the cases are  full and there is no line',
+    function () {
+        var _ = new TicTacToe();
+        _.play(_.playcases[0]); //player x top left
+        _.play(_.playcases[1]); //player o top
+        _.play(_.playcases[2]); //player x top right
+        _.play(_.playcases[4]); //player o middle
+        _.play(_.playcases[7]); //player x bottom
+        _.play(_.playcases[6]); //player o bottom left
+        _.play(_.playcases[3]); //player x left
+        _.play(_.playcases[5]); //player o right
+        _.play(_.playcases[8]); //player x right
+        //x made a diagonal : top left, middle, bottom right
+
+        expect(_.winner()).toBe(null);
+    });
 });
 
