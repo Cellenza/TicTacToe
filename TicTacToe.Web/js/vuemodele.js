@@ -73,7 +73,13 @@
 			return public_.winner() !== null || thereIsNoMoreAvailableCase() ;
 		});
 
-        
+		public_.resetGame = function () {
+		    public_.winner(null);
+		    for (var i = 0; i < public_.playcases.length; ++i) {
+		        var playcase = public_.playcases[i];
+		        playcase.player(null);
+		    }
+		}
 	};
 
 })();
