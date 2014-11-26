@@ -1,40 +1,33 @@
 <html>
 <head>
-
-<link rel="stylesheet" href="style.css" />
-<script type="text/javascript" src="js/knockout.js"></script>
-<script type="text/javascript" src="js/vuemodele.js"></script>
-
-
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body data-bind="css : {gameended: gameEnded }">
 
+    <div id="morpion" data-bind="foreach: playcases">
 
+        <div class="playcase" data-bind="click: $root.play,css : {x: player() === 'x', o: player() === 'o'}"></div>
 
-<div id="morpion" data-bind="foreach: playcases">
+    </div>
 
-	<div class="playcase" data-bind="click: $root.play,css : {x: player() === 'x', o: player() === 'o'}"></div>
+    <div id="currentplayer">
+        PLAYER
+        <div data-bind="css : {x: currentPlayer() === 'x', o: currentPlayer() === 'o' }"></div>
+    </div>
 
-</div>
+    <div id="winner">
+        WINNER
+        <div data-bind="css : {x: winner() === 'x', o: winner() === 'o' }"></div>
+    </div>
 
-<div id="currentplayer">
-	PLAYER
-	<div data-bind="css : {x: currentPlayer() === 'x', o: currentPlayer() === 'o' }"></div>
-</div>
+    <div id="theend" data-bind="click: resetGame">
+    </div>
 
-<div id="winner">
-	WINNER
-	<div data-bind="css : {x: winner() === 'x', o: winner() === 'o' }"></div>
-</div>
-
-<div id="theend" data-bind="click: resetGame">
-</div>
-
-<script type="text/javascript">
-
-	ko.applyBindings(new TicTacToe());
-
-</script>
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/vuemodele.js"></script>
+    <script type="text/javascript">
+        ko.applyBindings(new TicTacToe());
+    </script>
 
 </body>
 </html>
