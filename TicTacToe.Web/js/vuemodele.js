@@ -6,6 +6,9 @@
 	};
 
 	window.TicTacToe = function () {
+	  var public_ = this;
+
+	  public_.currentPlayer = ko.observable('x');
 
 	};
 

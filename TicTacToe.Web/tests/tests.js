@@ -12,5 +12,10 @@ describe("Tic Tac Toe Game", function() {
       bottomRight: 8
   }
 
+  it('should start with x player', function () {
+
+    var _ = new TicTacToe();
+    expect(_.currentPlayer()).toBe('x');
+  });
 });
 
