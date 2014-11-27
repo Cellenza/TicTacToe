@@ -18,7 +18,12 @@
 
 	  public_.currentPlayer = ko.observable('x');
 
-	  public_.play = function () {
+	  public_.play = function (playcase) {
+	    if (playcase.player() !== null)
+	      return;
+
+	    playcase.player(public_.currentPlayer());
+
 	    tour = (tour + 1) % 2;
 	    public_.currentPlayer(player[tour]);
 	  };

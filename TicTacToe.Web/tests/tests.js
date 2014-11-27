@@ -27,5 +27,14 @@ describe("Tic Tac Toe Game", function() {
     expect(_.currentPlayer()).toBe('o');
   });
 
+
+  it('should forbid to play where another player already did', function () {
+    var _ = new TicTacToe();
+    _.play(_.playcases[position.top]);
+    expect(_.playcases[position.top].player()).toBe('x');
+    _.play(_.playcases[position.top]);
+    expect(_.playcases[position.top].player()).toBe('x');
+  });
+
 });
 
