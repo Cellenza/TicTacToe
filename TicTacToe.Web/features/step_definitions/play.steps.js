@@ -26,7 +26,6 @@ module.exports = function () {
     this.Then(/^The hand switch to the adversary$/, function (callback) {
         //expect(1).toBe(1); // jasmine-based
         assert.equal(game.currentPlayer(), 'o', 'The hand has not switched.');
-        expect(true).toBe(true);
         callback();
     });
 
