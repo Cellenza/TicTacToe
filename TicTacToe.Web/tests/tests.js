@@ -17,5 +17,15 @@ describe("Tic Tac Toe Game", function() {
     var _ = new TicTacToe();
     expect(_.currentPlayer()).toBe('x');
   });
+
+
+
+  it("should change the current player each tour", function () {
+
+    var _ = new TicTacToe();
+    _.play(_.playcases[position.topLeft]);
+    expect(_.currentPlayer()).toBe('o');
+  });
+
 });
 
