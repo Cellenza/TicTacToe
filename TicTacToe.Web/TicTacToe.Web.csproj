@@ -57,7 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="features\step_definitions\play.steps.js" />
     <Content Include="js\knockout.js" />
     <Content Include="js\vuemodele.js" />
     <Content Include="karma.conf.js" />
@@ -76,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
-    <Content Include="features\play.feature" />
     <Content Include="app.template" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
