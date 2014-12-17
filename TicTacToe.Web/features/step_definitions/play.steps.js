@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 module.exports = function () {
-
     global.window = {};
     global.ko = require('../../js/knockout.js');
     var app = require('../../js/vuemodele.js');
@@ -28,5 +27,4 @@ module.exports = function () {
         assert.equal(game.currentPlayer(), 'o', 'The hand has not switched.');
         callback();
     });
-
 };
